@@ -11,7 +11,7 @@
 	<groupId>com.endava</groupId>
 	<artifactId>school4it</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>school4it</name>
+	<name>BackEnd</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
