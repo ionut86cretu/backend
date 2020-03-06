@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="school4it" />
+        <module name="BackEnd" />
+        <module name="java-school-2020" />
       </profile>
     </annotationProcessing>
   </component>
