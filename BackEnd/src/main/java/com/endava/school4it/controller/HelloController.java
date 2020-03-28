@@ -1,11 +1,10 @@
 package com.endava.school4it.controller;
 
+import com.endava.school4it.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.endava.school4it.service.HelloService;
 
 @RestController
 public class HelloController {
