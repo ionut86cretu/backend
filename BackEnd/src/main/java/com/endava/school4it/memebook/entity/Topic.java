@@ -1,28 +1,45 @@
 package com.endava.school4it.memebook.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.hibernate.annotations.Formula;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "topic")
 public class Topic implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "TITLE", nullable = false)
     private String title;
 
+    @Column(name = "MEDIA_URL", nullable = false)
     private String mediaUrl;
 
+    @Column(name = "TOPIC_DATE", nullable = false)
     private Date topicDate;
 
+    @Column(name = "UPVOTE", nullable = false)
     private Long upVote;
 
+    @Column(name = "DOWNVOTE", nullable = false)
     private Long downVote;
 
+    @Formula("UPVOTE - DOWNVOTE")
     private Long popularity;
 
+    @Column(name = "AUTHOR", nullable = false)
     private String author;
 
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Comment> comments;
 
     public Long getId() {
