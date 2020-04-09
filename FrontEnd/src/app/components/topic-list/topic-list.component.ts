@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicModel } from '../../model/topic.model';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'mb-topic-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopicListComponent implements OnInit {
 
-  constructor() { }
+  topics: TopicModel[];
 
-  ngOnInit(): void {
+  constructor(private topicService: TopicService) {
+  }
+
+  ngOnInit() {
+    this.topicService.loadTerminals().subscribe(result => {
+      this.topics = result;
+    });
   }
 
 }
