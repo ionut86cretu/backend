@@ -38,5 +38,8 @@ public class TopicController {
         return topicDao.upVote(id);
     }
 
-    //TODO PUT /topics/{id}/downVote
+    @RequestMapping(path = "/topics/{id}/downVote", method = RequestMethod.PUT)
+    public Topic downVote(@PathVariable("id") Long id) {
+        return topicDao.downVote(id);
+    }
 }
