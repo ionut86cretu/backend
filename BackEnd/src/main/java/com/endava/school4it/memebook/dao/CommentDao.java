@@ -8,6 +8,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 @Component("commentDao")
@@ -21,8 +22,15 @@ public class CommentDao {
             String author,
             String comment
     ) {
-        //TODO
-        return null;
+        Comment newRecord = new Comment();
+
+        newRecord.setIdTopic(idTopic);
+        newRecord.setAuthor(author);
+        newRecord.setComment(comment);
+
+        newRecord.setCommentDate(new Date());
+
+        return commentRepository.saveAndFlush(newRecord);
     }
 
     public List<Comment> get(Long idTopic) {

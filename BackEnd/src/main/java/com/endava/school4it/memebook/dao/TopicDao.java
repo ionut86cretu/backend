@@ -29,8 +29,9 @@ public class TopicDao {
     }
 
     public Topic downVote(Long id) {
-        //TODO
-        return null;
+        Topic topic = topicRepository.findById(id).get();
+        topic.setDownVote(topic.getDownVote() + 1);
+        return topicRepository.saveAndFlush(topic);
     }
 
     public Topic create(
