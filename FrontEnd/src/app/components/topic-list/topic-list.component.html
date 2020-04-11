@@ -1,3 +1,11 @@
-<div *ngFor="let topic of topics">
-	<mb-topic-card [topic]="topic"></mb-topic-card>
+<div class="topic-list"
+	 infinite-scroll
+	 [infiniteScrollDistance]="0.5"
+	 [infiniteScrollUpDistance]="1.5"
+	 [infiniteScrollThrottle]="150"
+	 (scrolled)="onScrollDown()"
+	 [scrollWindow]="false">
+	<div *ngFor="let topic of topics">
+		<mb-topic-card [topic]="topic"></mb-topic-card>
+	</div>
 </div>

@@ -10,14 +10,29 @@ import { TopicService } from '../../services/topic.service';
 export class TopicListComponent implements OnInit {
 
   topics: TopicModel[];
+  private pageSize = 3;
+  private page = 0;
+
+  private lastPageReached = false;
 
   constructor(private topicService: TopicService) {
   }
 
   ngOnInit() {
-    this.topicService.loadTerminals().subscribe(result => {
-      this.topics = result;
-    });
+    this.topics = [];
+    this.page = -1;
+    this.onScrollDown();
+  }
+
+  onScrollDown() {
+    console.log('on scroll down');
+    if ( !this.lastPageReached ) {
+      this.topicService.loadTopics(++this.page, this.pageSize).subscribe(result => {
+        console.log('result:', result);
+        const topicsExtended = this.topics.concat(result);
+        this.topics = topicsExtended;
+      });
+    }
   }
 
 }
