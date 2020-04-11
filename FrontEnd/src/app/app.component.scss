@@ -1,0 +1,11 @@
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	z-index: 1000;
+}
+
+.content-panel {
+	overflow-y: auto;
+	height: calc(100vh - 64px);
+}
