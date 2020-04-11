@@ -9,6 +9,7 @@ import { AppHeaderComponent } from './components/app-header/app-header.component
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { TopicCardComponent } from './components/topic-card/topic-card.component';
 import { TopicDetailsComponent } from './components/topic-details/topic-details.component';
+import { AppErrorComponent } from './components/app-error/app-error.component';
 
 
 
@@ -19,7 +20,8 @@ import { TopicDetailsComponent } from './components/topic-details/topic-details.
     AppHeaderComponent,
     TopicListComponent,
     TopicCardComponent,
-    TopicDetailsComponent
+    TopicDetailsComponent,
+    AppErrorComponent
   ],
   imports: [
     BrowserModule,
