@@ -10,6 +10,7 @@ import { TopicService } from '../../services/topic.service';
 export class TopicListComponent implements OnInit {
 
   topics: TopicModel[];
+  // @todo change page size to input
   private pageSize = 3;
   private page = 0;
 
