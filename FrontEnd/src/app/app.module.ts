@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { TopicCardComponent } from './components/topic-card/topic-card.component';
+import { TopicDetailsComponent } from './components/topic-details/topic-details.component';
+import { AppErrorComponent } from './components/app-error/app-error.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -17,13 +22,18 @@ import { TopicCardComponent } from './components/topic-card/topic-card.component
     AppComponent,
     AppHeaderComponent,
     TopicListComponent,
-    TopicCardComponent
+    TopicCardComponent,
+    TopicDetailsComponent,
+    AppErrorComponent
   ],
   imports: [
     BrowserModule,
     MatToolbarModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule,
+    BrowserAnimationsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

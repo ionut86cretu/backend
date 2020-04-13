@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TopicListComponent } from './components/topic-list/topic-list.component';
+import { TopicDetailsComponent } from './components/topic-details/topic-details.component';
+import { AppErrorComponent } from './components/app-error/app-error.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'topic-list'},
+  {path: 'topic-list', component: TopicListComponent},
+  {path: 'topic-details', component: TopicDetailsComponent},
+  {path: '**', component: AppErrorComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
