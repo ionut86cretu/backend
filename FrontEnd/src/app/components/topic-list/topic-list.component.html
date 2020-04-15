@@ -11,7 +11,7 @@
 
     <mat-form-field>
       <mat-label>Select an option</mat-label>
-      <mat-select [(value)]="pageSize">
+      <mat-select [compareWith]="compareWith" [(value)]="pageSize">
         <mat-option>None</mat-option>
         <mat-option value="1">Prima</mat-option>
         <mat-option value="5">A cincia</mat-option>

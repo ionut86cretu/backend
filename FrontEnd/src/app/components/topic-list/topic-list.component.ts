@@ -11,7 +11,7 @@ export class TopicListComponent implements OnInit {
 
   topics: TopicModel[];
   // @todo change page size to input
-  private pageSize = 3;
+  public pageSize = 3;
   private page = 0;
 
   private lastPageReached = false;
@@ -50,5 +50,9 @@ export class TopicListComponent implements OnInit {
 
   public getPagination(){
     return this.pageSize;
+  }
+
+  public compareWith(t1:any, t2:any){
+    return ('' + t1) == ('' + t2);
   }
 }
