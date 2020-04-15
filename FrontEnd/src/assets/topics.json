@@ -689,5 +689,213 @@
         "commentDate": "2015-04-23T18:25:43.511Z"
       }
     ]
+  },
+  {
+    "id": 1,
+    "title": "Title 1",
+    "mediaUrl": "https://2.bp.blogspot.com/-IpWBrLhAB6w/XMaWK4Z5KDI/AAAAAAAAAJA/10joEkrrAYYUdQhVOeqTrIyElNkhccA7ACLcBGAs/s1600/IMG_20190427_201318_572.jpg",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 5,
+    "downVotes": 7,
+    "author": "Gogu",
+    "comments": [
+      {
+        "id": 7,
+        "author": "MonaLisa",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 8,
+        "author": "Gigel",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "mediaUrl": "https://codinginfinite.com/wp-content/uploads/2019/05/maxresdefault-1.jpg",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Title 3",
+    "mediaUrl": "https://www.testbytes.net/wp-content/uploads/2019/06/Untitled-1.png",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Title 4",
+    "mediaUrl": "https://code-love.com/wp-content/uploads/2019/04/got-a-new-error.jpeg",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Title 5",
+    "mediaUrl": "https://pics.astrologymemes.com/daca-viata-iti-intoarce-spatele-fura-i-portofelul-giovani-jacmanel-viata-7024048.png",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Mah life rn lol",
+    "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVOVMK6laI49zFDCmsFi1-sQRu4_D5Uhlt7w5IigR6vLAYuicY&usqp=CAU",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 5,
+    "downVotes": 7,
+    "author": "Gogu",
+    "comments": [
+      {
+        "id": 7,
+        "author": "MonaLisa",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 8,
+        "author": "Gigel",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Title 7",
+    "mediaUrl": "https://scontent-yyz1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c46.0.987.987a/s640x640/88228386_226326188494302_2171432898648613030_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=51EcWfWP034AX8mv41A&oh=7ac41afd7685b2ab72b19833bb851422&oe=5E9768B3",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Title 8",
+    "mediaUrl": "https://scontent-waw1-1.cdninstagram.com/v/t51.2885-15/e35/c44.0.632.632a/81715080_522172271758462_3922304516981358475_n.jpg?_nc_ht=scontent-waw1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=fK1pxDARZaAAX9xhFzl&oh=be01e0246bd927702572603db6324daf&oe=5ED5C878",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Title 9",
+    "mediaUrl": "https://d.wattpad.com/story_parts/16/images/141d758ed0ce0caa.jpg",
+    "topicDate": "2012-04-23T18:25:43.511Z",
+    "upVotes": 3,
+    "downVotes": 4,
+    "author": "blueAngel99",
+    "comments": [
+      {
+        "id": 9,
+        "author": "Loki",
+        "comment": "Cool",
+        "commentDate": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "id": 10,
+        "author": "Pampers",
+        "comment": "Cool 1",
+        "commentDate": "2015-04-23T18:25:43.511Z"
+      }
+    ]
   }
+
 ]
