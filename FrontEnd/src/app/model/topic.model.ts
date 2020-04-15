@@ -4,5 +4,6 @@ export class TopicModel {
 	title: string;
 	mediaUrl: string;
 	author: string;
+  transformAction: string;
 	comments: CommentModel[];
 }

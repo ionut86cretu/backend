@@ -13,6 +13,10 @@ import { AppErrorComponent } from './components/app-error/app-error.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -24,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TopicListComponent,
     TopicCardComponent,
     TopicDetailsComponent,
-    AppErrorComponent
+    AppErrorComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     InfiniteScrollModule,
     BrowserAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

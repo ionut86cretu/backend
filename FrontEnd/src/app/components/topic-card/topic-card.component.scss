@@ -30,3 +30,21 @@
 	-webkit-mask: url(../../../assets/thumbs-down.svg) no-repeat center;
 	mask: url(../../../assets/thumbs-down.svg) no-repeat center;
 }
+
+.rotate-image{
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../assets/rotate.png);
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+img{
+  -webkit-transition: -webkit-transform 1s ease-in;
+}
+
+.rotate-180{
+  transform: rotate(180deg);
+}

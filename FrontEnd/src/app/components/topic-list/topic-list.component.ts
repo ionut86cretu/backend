@@ -38,6 +38,17 @@ export class TopicListComponent implements OnInit {
         this.topics = topicsExtended;
       });
     }
+
+    this.pageSize = 5;
+
   }
 
+  public changePagination(event){
+    var target = event.target;
+    this.pageSize = target.value;
+  }
+
+  public getPagination(){
+    return this.pageSize;
+  }
 }

@@ -15,4 +15,12 @@ export class TopicCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  public rotateImage(event) {
+    var target = event.target;
+    var parent = target.parentElement;
+    //var parentClass = parent.className;
+
+    parent.querySelector("img").classList.toggle("rotate-180");
+  }
+
 }
