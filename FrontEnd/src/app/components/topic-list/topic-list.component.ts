@@ -29,14 +29,17 @@ export class TopicListComponent implements OnInit {
     console.log('on scroll down');
     if ( !this.lastPageReached ) {
       this.topicService.loadTopics(++this.page, this.pageSize).subscribe(result => {
-        if ( !result || result.length === 0 ) {
-          this.lastPageReached = true;
-          return;
-        }
-        console.log('result:', result);
-        const topicsExtended = this.topics.concat(result);
-        this.topics = topicsExtended;
-      });
+            if ( !result || result.length === 0 ) {
+              this.lastPageReached = true;
+              return;
+            }
+            console.log('result:', result);
+            const topicsExtended = this.topics.concat(result);
+            this.topics = topicsExtended;
+          }, error => {
+            console.log('topic error' + error);
+          }
+      );
     }
   }
 
