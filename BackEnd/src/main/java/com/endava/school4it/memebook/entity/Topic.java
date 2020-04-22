@@ -20,7 +20,7 @@ public class Topic implements Serializable {
     @Column(name = "TITLE", nullable = false)
     private String title;
 
-    @Column(name = "MEDIA_URL", nullable = false)
+    @Column(name = "MEDIA_URL", nullable = false, length = 1000)
     private String mediaUrl;
 
     @Column(name = "TOPIC_DATE", nullable = false)

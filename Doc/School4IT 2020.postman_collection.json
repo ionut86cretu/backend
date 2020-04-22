@@ -39,7 +39,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/topic/1",
+					"raw": "localhost:8080/topics/1",
 					"host": [
 						"localhost"
 					],
