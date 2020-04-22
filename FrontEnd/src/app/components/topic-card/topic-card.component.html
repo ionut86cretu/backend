@@ -1,16 +1,21 @@
 <div class="container topic-card">
 	<div class="row justify-content-center">
-		<div class="col-12 title">{{topic.title}}</div>
+		<a routerLink="/topic-details/{{topic.id}}" *ngIf="topicLinksActive; else titleDiv">
+			<ng-template *ngTemplateOutlet="titleDiv"></ng-template>
+		</a>
+		<ng-template #titleDiv>
+			<div class="col-12 title">{{topic.title}}</div>
+		</ng-template>
 	</div>
-	<div class="row justify-content-center">
+	<div class="row justify-content-center" (click)="goToDetailsPage()">
 		<img class="col-12 col-md-8 col-lg-6" mat-card-image src={{topic.mediaUrl}} alt="{{'topic image for id '+topic.title}}">
 	</div>
 	<div class="row justify-content-end">
 		<div class="col-12 col-md-8 col-lg-6 container">
 			<div class = "row justify-content-end">
 				<span class="col-8 col-lg-10">{{topic.comments?.length}} comments</span>
-				<span matTooltip="UpVote" class="col-2 col-lg-1 thumbs-up"></span>
-				<span matTooltip="DownVote" class="col-2 col-lg-1 thumbs-down"></span>
+				<span matTooltip="UpVote" class="col-2 col-lg-1 thumbs-up" (click)="vote(true)"></span>
+				<span matTooltip="DownVote" class="col-2 col-lg-1 thumbs-down" (click)="vote(false)"></span>
 			</div>
 		</div>
 	</div>
