@@ -1,0 +1,11 @@
+<div class="container topic-card">
+	<div class="row justify-content-end pb-4" *ngFor="let comment of topic.comments; index as idx; last as last; even as even">
+		<div class="col-12 col-md-8 col-lg-6 container pb-2" [ngClass]="{'border-bottom': !last, 'even-class': even}">
+			<div class="row justify-content-end pt-2">
+				<div class="col-6"><span style="width: 100%">{{comment.comment}}</span></div>
+				<span class="col-3">{{comment.commentDate | date}}</span>
+				<span class="col-3">{{comment.author}}</span>
+			</div>
+		</div>
+	</div>
+</div>
