@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TopicModel } from '../../model/topic.model';
+import { Router } from '@angular/router';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'mb-topic-card',
@@ -8,19 +10,28 @@ import { TopicModel } from '../../model/topic.model';
 })
 export class TopicCardComponent implements OnInit {
   @Input() topic: TopicModel;
+  @Input() topicLinksActive: boolean = true;
 
-  constructor() {
+  constructor(protected router: Router,
+              private topicService: TopicService) {
   }
 
   ngOnInit() {
   }
 
-  public rotateImage(event) {
-    var target = event.target;
-    var parent = target.parentElement;
-    //var parentClass = parent.className;
-
-    parent.querySelector("img").classList.toggle("rotate-180");
+  goToDetailsPage() {
+    if (this.topicLinksActive) {
+      this.router.navigateByUrl('/topic-details/' + this.topic.id);
+    }
   }
 
+  vote(upVote: boolean) {
+    this.topicService.voteTopic(this.topic.id, upVote).subscribe(result => {
+      console.log('upVote:', upVote);
+      this.topic = result;
+    }, error => {
+      console.log('topic vote error', error);
+    }
+    );
+  }
 }
