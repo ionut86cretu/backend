@@ -1,3 +1,3 @@
 <mb-topic-card [topic]="topic" [topicLinksActive]="false"></mb-topic-card>
-<span> TODO add comment box </span>
-<span> TODO list previous comments</span>
+<mb-add-comment [topic]="topic" (onAdd)="onAddNewComment($event)"></mb-add-comment>
+<mb-topic-comments [topic]="topic"></mb-topic-comments>
