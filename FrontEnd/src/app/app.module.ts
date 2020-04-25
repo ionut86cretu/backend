@@ -18,6 +18,8 @@ import { TopicCommentsComponent } from './components/topic-comments/topic-commen
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {AppFooterComponent} from "./components/app-footer/app-footer.component";
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -31,7 +33,8 @@ import { MatButtonModule } from '@angular/material/button';
     TopicDetailsComponent,
     AppErrorComponent,
     AddCommentComponent,
-    TopicCommentsComponent
+    TopicCommentsComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatTooltipModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
