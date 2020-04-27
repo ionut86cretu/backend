@@ -15,4 +15,8 @@ export class CommentService {
         return this.http.post<CommentModel>('api/topics/' + topicId + '/comments', comment);
     }
 
+    public deleteComment(topicId: number, commentId: number): Observable<number> {
+        return this.http.delete<number>('api/topics/' + topicId + '/comments/' + commentId);
+    }
+
 }
