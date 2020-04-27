@@ -20,4 +20,13 @@ public class CommentController {
         return commentDao.create(idTopic, payload.getAuthor(), payload.getComment());
     }
 
+    @RequestMapping(path = "/topics/{idTopic}/comments/{idComment}", method = RequestMethod.DELETE)
+    public Long deleteComment(
+            @PathVariable("idTopic") Long idTopic,
+            @PathVariable("idComment") Long idComment
+    ) {
+        commentDao.delete(idComment);
+        return idComment;
+    }
+
 }
