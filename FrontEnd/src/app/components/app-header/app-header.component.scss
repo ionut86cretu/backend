@@ -1,15 +1,21 @@
 .app-logo {
-	height: 30px;
-	align-self: flex-start;
+  height: 30px;
+  align-self: flex-start;
+  cursor: pointer;
 }
 
 .app-name {
-	align-self: center;
-	font-size: 20px;
+  align-self: center;
+  font-size: 20px;
 }
 
-.toolbar-item{
-	align-self: flex-end;
-	margin-left: 5px;
-	font-size: 14px;
+.toolbar-item {
+  align-self: flex-end;
+  margin-left: 5px;
+  font-size: 14px;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
