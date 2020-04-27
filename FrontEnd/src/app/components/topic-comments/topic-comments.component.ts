@@ -17,8 +17,12 @@ export class TopicCommentsComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    deleteComment(id: number) {
+    deleteComment(commentId: number, topicId: number) {
       // nu mergea pentru ca nu facea subscribe
-      this.commentService.deleteComment(id).subscribe();
+      this.commentService.deleteComment(commentId, topicId).subscribe(result => {
+        this.topic = result;
+      }, error => {
+        console.log('topic delete comment error', error);
+      });
     }
 }
