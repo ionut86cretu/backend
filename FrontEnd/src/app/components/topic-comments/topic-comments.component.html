@@ -4,7 +4,10 @@
 			<div class="row justify-content-end pt-2">
 				<div class="col-6"><span style="width: 100%">{{comment.comment}}</span></div>
 				<span class="col-3">{{comment.commentDate | date}}</span>
-				<span class="col-3">{{comment.author}}</span>
+				<span class="col-3">
+          {{comment.author}}
+          <span class="delete-comment" (click)="deleteComment(comment.id)"> X </span>
+        </span>
 			</div>
 		</div>
 	</div>

@@ -1,41 +1,11 @@
 <div class="topic-list"
-	 infinite-scroll
-	 [infiniteScrollDistance]="0.5"
-	 [infiniteScrollUpDistance]="1.5"
-	 [infiniteScrollThrottle]="150"
-	 (scrolled)="onScrollDown()"
-	 [scrollWindow]="false">
-
-  <div class="change-page-load">
-    <label class="text-primary margin-right mr-4">Change Page Load Items</label>
-
-    <mat-form-field>
-      <mat-label>Select an option</mat-label>
-      <mat-select [compareWith]="compareWith" [(value)]="pageSize">
-        <mat-option>None</mat-option>
-        <mat-option value="1">Prima</mat-option>
-        <mat-option value="5">A cincia</mat-option>
-        <mat-option value="3">A Treia</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    Optiunea validata - {{pageSize}}
-
-    <!-- <select name="pagination" (change)="changePagination($event)" [value]='getPagination()'>
-      <option [value]="1"> 1 </option>
-      <option [value]="2"> 2 </option>
-      <option [value]="3"> 3 </option>
-      <option [value]="4"> 4 </option>
-      <option [value]="5"> 5 </option>
-      <option [value]="6"> 6 </option>
-      <option [value]="7"> 7 </option>
-      <option [value]="8"> 8 </option>
-      <option [value]="9"> 9 </option>
-      <option [value]="10"> 10 </option>
-    </select> -->
+     infinite-scroll
+     [infiniteScrollDistance]="0.5"
+     [infiniteScrollUpDistance]="1.5"
+     [infiniteScrollThrottle]="150"
+     (scrolled)="onScrollDown()"
+     [scrollWindow]="false">
+  <div *ngFor="let topic of topics">
+    <mb-topic-card [topic]="topic"></mb-topic-card>
   </div>
-
-	<div *ngFor="let topic of topics">
-		<mb-topic-card [topic]="topic"></mb-topic-card>
-	</div>
 </div>

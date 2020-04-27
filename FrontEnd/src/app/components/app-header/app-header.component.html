@@ -1,10 +1,12 @@
 <mat-toolbar color = "primary">
 	<div class="d-flex w-100">
-		<img alt="Logo" class="app-logo" src="assets/endava_logo.png">
-		<span class="app-name flex-grow-1 text-center">Memebook</span>
-		<a routerLink="/topic-list/">
+    <a href="https://www.endava.com/en" target="_blank"><img alt="Logo" class="app-logo" src="assets/endava_logo.png"></a>
+    <span class="app-name flex-grow-1 text-center"><a routerLink="/topic-list/">Memebook</a></span>
+		<a routerLink="/topic-list/" class="menu-item">
 			<span class="toolbar-item">Home</span>
 		</a>
-		<span class="toolbar-item">Add topic</span>
+    <a routerLink="/add-topic/" class="menu-item">
+		  <span class="toolbar-item">Add topic</span>
+    </a>
 	</div>
 </mat-toolbar>

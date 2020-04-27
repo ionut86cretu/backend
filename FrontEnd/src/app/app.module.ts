@@ -20,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {AppFooterComponent} from "./components/app-footer/app-footer.component";
 import {MatSelectModule} from "@angular/material/select";
+import { AddTopicComponent } from './components/add-topic/add-topic.component';
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+
 
 
 
@@ -34,7 +37,8 @@ import {MatSelectModule} from "@angular/material/select";
     AppErrorComponent,
     AddCommentComponent,
     TopicCommentsComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    AddTopicComponent
   ],
   imports: [
     BrowserModule,
@@ -47,9 +51,12 @@ import {MatSelectModule} from "@angular/material/select";
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    MatSnackBar
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

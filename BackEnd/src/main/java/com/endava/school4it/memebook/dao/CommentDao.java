@@ -39,4 +39,8 @@ public class CommentDao {
         Example commentExample = Example.of(match);
         return commentRepository.findAll(commentExample, Sort.by("id"));
     }
+
+    public void delete(Long commentId){
+        commentRepository.deleteById(commentId);
+    }
 }

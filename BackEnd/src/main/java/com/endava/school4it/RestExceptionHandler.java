@@ -11,7 +11,7 @@ public class RestExceptionHandler {
 
 	@ExceptionHandler({ RuntimeException.class })
 	public ResponseEntity<Object> handleException(RuntimeException exception) {
-		return new ResponseEntity<>("Something went wrong"
+		return new ResponseEntity<>("Something went wrong " + exception.getMessage()
 				, HttpStatus.BAD_REQUEST);
 	}
 

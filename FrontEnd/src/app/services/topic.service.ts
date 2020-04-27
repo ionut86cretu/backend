@@ -23,4 +23,8 @@ export class TopicService {
     return this.http.put<TopicModel>('api/topics/' + topicId + '/' + (up ? 'upVote' : 'downVote'), null);
   }
 
+  public addTopic(topic: TopicModel): Observable<TopicModel> {
+    return this.http.put<TopicModel>('api/add-topic', topic);
+  }
+
 }

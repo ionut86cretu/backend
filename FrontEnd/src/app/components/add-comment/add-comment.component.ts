@@ -36,6 +36,7 @@ export class AddCommentComponent implements OnInit {
         this.commentService.addComment(this.topic.id, this.myForm.value).subscribe(result => {
             console.log('am adaugat', result);
             this.addedComment.emit(result);
+            this.myForm.reset();
         }, error => {
             console.log('topic comment error', error);
         });

@@ -1,5 +1,6 @@
 package com.endava.school4it.memebook.controller;
 
+import com.endava.school4it.memebook.api.PostTopicPayload;
 import com.endava.school4it.memebook.dao.CommentDao;
 import com.endava.school4it.memebook.dao.TopicDao;
 import com.endava.school4it.memebook.entity.Topic;
@@ -24,6 +25,13 @@ public class TopicController {
             @RequestParam(name = "sort", required = false) String sort
     ) {
         return topicDao.get(page, size, sort);
+    }
+
+    @RequestMapping(path = "/add-topic", method = RequestMethod.PUT)
+    public Topic addTopic(
+            @RequestBody PostTopicPayload payload
+    ){
+        return topicDao.create(payload.getTitle(), payload.getMediaUrl(), payload.getAuthor());
     }
 
     @RequestMapping(path = "/topics/{id}", method = RequestMethod.GET)

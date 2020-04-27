@@ -55,7 +55,8 @@ public class TopicDao {
     public List<Topic> get(int page, int size, String sort) {
         Sort sortBy;
         if (StringUtils.isEmpty(sort)) {
-            sortBy = Sort.by("popularity").descending();
+            //sortBy = Sort.by("popularity").descending();
+            sortBy = Sort.by("id").descending();
         } else {
             sortBy = Sort.by(sort).descending();
         }
