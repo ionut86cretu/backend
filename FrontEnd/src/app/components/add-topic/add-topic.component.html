@@ -1,0 +1,32 @@
+<div class="container topic-card">
+	<div class="row justify-content-end">
+		<div class="col-12 col-md-8 col-lg-6 container" [formGroup]="myForm">
+			<div class="row justify-content-start">
+				<div class="col-12">
+					<mat-form-field>
+						<input matInput placeholder="Title" formControlName="title" id="add_topic_title">
+						<mat-hint>Please enter your name!</mat-hint>
+						<mat-error *ngIf="myForm.controls['title'].hasError('pattern') && !myForm.controls['title'].hasError('required')">
+							Please enter a valid name using A-Z a-z 0-9 and a -
+						</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="col-12">
+					<mat-form-field style="width: 100%">
+						<textarea matInput placeholder="Enter new media URL" formControlName="mediaUrl" id="add_topic_url"></textarea>
+					</mat-form-field>
+				</div>
+				<div class="col-8 col-lg-9">
+					<mat-form-field style="width: 100%">
+						<textarea matInput placeholder="Author" formControlName="author" id="add_topic_author"></textarea>
+					</mat-form-field>
+				</div>
+				<div class="col-4 col-lg-3">
+					<button mat-button (click)="addTopic($event)" [disabled]="!myForm.valid" id="add_topic_button">
+						<span>Add Topic</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
