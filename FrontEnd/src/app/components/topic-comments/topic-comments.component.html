@@ -6,7 +6,7 @@
 				<span class="col-3">{{comment.commentDate | date}}</span>
 				<span class="col-3">
 					{{comment.author}}
-					<span class="delete-comment" (click)="deleteComment(comment.id)" id="delete_topic_button"> X </span>
+					<span class="delete-comment" (click)="deleteComment(comment.id)" id="{{'delete_topic_button_'+comment.id}}"> X </span>
 				</span>
 			</div>
 		</div>
