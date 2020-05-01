@@ -34,6 +34,10 @@ public class TopicDao {
         return topicRepository.saveAndFlush(topic);
     }
 
+    public void deleteTopic(Long id) {
+        topicRepository.deleteById(id);
+    }
+
     public Topic create(
             String title,
             String mediaUrl,

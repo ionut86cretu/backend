@@ -1,29 +1,32 @@
 package com.endava.school4it.memebook.api;
 
 public class PostTopicPayload {
-    private String title;
-    private String mediaUrl;
-    private String author;
 
-    public String getTitle() {
-        return title;
-    }
+	private String mediaUrl;
+	private String author;
+	private String title;
 
-    public void setTitle(String title) { this.title = title; }
+	public String getAuthor() {
+		return author;
+	}
 
-    public String getMediaUrl() {
-        return mediaUrl;
-    }
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-    public void setMediaUrl(String mediaUrl) {
-        this.mediaUrl = mediaUrl;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public String getAuthor() {
-        return author;
-    }
+	public void setTitle(String comment) {
+		this.title = comment;
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	public String getMediaUrl() {
+		return mediaUrl;
+	}
+
+	public void setMediaUrl(String mediaUrl) {
+		this.mediaUrl = mediaUrl;
+	}
 }

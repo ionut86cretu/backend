@@ -18,45 +18,36 @@ import { TopicCommentsComponent } from './components/topic-comments/topic-commen
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {AppFooterComponent} from "./components/app-footer/app-footer.component";
-import {MatSelectModule} from "@angular/material/select";
 import { AddTopicComponent } from './components/add-topic/add-topic.component';
-import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
-
-
-
-
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppHeaderComponent,
-    TopicListComponent,
-    TopicCardComponent,
-    TopicDetailsComponent,
-    AppErrorComponent,
-    AddCommentComponent,
-    TopicCommentsComponent,
-    AppFooterComponent,
-    AddTopicComponent
-  ],
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    HttpClientModule,
-    AppRoutingModule,
-    InfiniteScrollModule,
-    BrowserAnimationsModule,
-    MatTooltipModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatSnackBarModule
-  ],
-  providers: [
-    MatSnackBar
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AppHeaderComponent,
+        TopicListComponent,
+        TopicCardComponent,
+        TopicDetailsComponent,
+        AppErrorComponent,
+        AddCommentComponent,
+        TopicCommentsComponent,
+        AddTopicComponent
+    ],
+    imports: [
+        BrowserModule,
+        MatToolbarModule,
+        HttpClientModule,
+        AppRoutingModule,
+        InfiniteScrollModule,
+        BrowserAnimationsModule,
+        MatTooltipModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSnackBarModule
+    ],
+    providers: [MatSnackBar],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

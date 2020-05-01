@@ -1,5 +1,7 @@
 package com.endava.school4it.memebook.dao;
 
+import static org.springframework.data.domain.Sort.Direction.DESC;
+
 import com.endava.school4it.memebook.entity.Comment;
 import com.endava.school4it.memebook.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +39,10 @@ public class CommentDao {
         Comment match = new Comment();
         match.setIdTopic(idTopic);
         Example commentExample = Example.of(match);
-        return commentRepository.findAll(commentExample, Sort.by("id"));
+        return commentRepository.findAll(commentExample, Sort.by(DESC, "commentDate"));
     }
 
-    public void delete(Long commentId){
-        commentRepository.deleteById(commentId);
-    }
+	public void delete(Long idComment) {
+        commentRepository.deleteById(idComment);
+	}
 }

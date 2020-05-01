@@ -4,6 +4,7 @@ import com.endava.school4it.memebook.api.PostTopicPayload;
 import com.endava.school4it.memebook.dao.CommentDao;
 import com.endava.school4it.memebook.dao.TopicDao;
 import com.endava.school4it.memebook.entity.Topic;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,11 @@ public class TopicController {
 
     @Autowired
     private CommentDao commentDao;
+
+    @RequestMapping(path = "/topics", method = RequestMethod.POST)
+    public Topic addTopic(@RequestBody PostTopicPayload payload) {
+        return topicDao.create(payload.getAuthor(), payload.getMediaUrl(), payload.getTitle());
+    }
 
     @RequestMapping(path = "/topics", method = RequestMethod.GET)
     public List<Topic> getTopics(
@@ -50,4 +56,10 @@ public class TopicController {
     public Topic downVote(@PathVariable("id") Long id) {
         return topicDao.downVote(id);
     }
+
+    @RequestMapping(path = "/topics/{id}", method = RequestMethod.DELETE)
+    public void deleteTopic(@PathVariable("id") Long id) {
+        topicDao.deleteTopic(id);
+    }
+
 }

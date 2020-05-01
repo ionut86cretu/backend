@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TopicModel } from '../../model/topic.model';
-import {CommentService} from "../../services/comment.service";
+import { CommentService } from '../../services/comment.service';
 
 @Component({
     selector: 'mb-topic-comments',
@@ -17,12 +17,9 @@ export class TopicCommentsComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    deleteComment(commentId: number, topicId: number) {
-      // nu mergea pentru ca nu facea subscribe
-      this.commentService.deleteComment(commentId, topicId).subscribe(result => {
-        this.topic = result;
-      }, error => {
-        console.log('topic delete comment error', error);
-      });
+    deleteComment(idComment: number) {
+        this.commentService.deleteComment(this.topic.id, idComment).subscribe(result => {
+            this.topic.comments = this.topic.comments.filter(comment => comment.id !== result);
+        });
     }
 }
