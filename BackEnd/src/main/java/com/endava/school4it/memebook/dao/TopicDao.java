@@ -38,6 +38,10 @@ public class TopicDao {
         topicRepository.deleteById(id);
     }
 
+    public void deleteAllTopics(){
+        topicRepository.deleteAll();
+    }
+
     public Topic create(
             String title,
             String mediaUrl,
