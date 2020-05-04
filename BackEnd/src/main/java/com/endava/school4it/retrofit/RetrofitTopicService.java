@@ -37,6 +37,10 @@ public interface RetrofitTopicService {
             @Path("id") Long id
     );
 
+    @DELETE("/topics/")
+    Call<Topic> deleteAllTopics(
+    );
+
     @PUT("/topics/{id}/upVote")
     Call<Topic> upVoteTopic(
             @Path("id") Long id

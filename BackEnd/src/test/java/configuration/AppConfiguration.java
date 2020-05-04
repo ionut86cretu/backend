@@ -13,6 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.endava.school4it.memebook.entity")
 @ComponentScan("com.endava.school4it.memebook.dao")
 @ComponentScan("com.endava.school4it.retrofit")
+@ComponentScan("com.endava.school4it.pageObject")
+@ComponentScan("com.endava.school4it.hooks")
 @EnableJpaRepositories(basePackages = {"com.endava.school4it.memebook.repository"})
 public class AppConfiguration {
 
