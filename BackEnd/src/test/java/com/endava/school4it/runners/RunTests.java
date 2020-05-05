@@ -10,9 +10,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         monochrome = true,
-        features = "src/test/resources/features/backend/",
+        features = "src/test/resources/features/",
         tags = {"not @ignore"},
-        glue = "com.endava.school4it.steps"
+        glue = {"com.endava.school4it.steps","com.endava.school4it.hooks"}
 )
 @ContextConfiguration(classes = AppConfiguration.class)
 public class RunTests {
