@@ -62,4 +62,10 @@ public class TopicController {
         topicDao.deleteTopic(id);
     }
 
+    @RequestMapping(path = "/topics/", method = RequestMethod.DELETE)
+    public void deleteAllTopics() {
+        topicDao.deleteAllTopics();
+    }
+
+
 }

@@ -13,6 +13,7 @@ import com.endava.school4it.memebook.entity.Topic;
 import com.endava.school4it.retrofit.RetrofitService;
 
 import configuration.AppConfiguration;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import net.serenitybdd.core.Serenity;
 import retrofit2.Response;
