@@ -34,6 +34,13 @@ public class MainPageUtil extends MainPage{
         topicAuthorInput.waitUntilVisible().then().sendKeys(topicAuthor);
     }
 
+    public boolean verifyTopicAdded(){
+        waitABit(3000);
+        if (newTopic.isDisplayed())
+            return true;
+        return false;
+    }
+
 /*    public int numberOfTopic() {
         waitABit(3000);
         return topics.size();

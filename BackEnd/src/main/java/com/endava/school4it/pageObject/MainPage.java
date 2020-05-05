@@ -45,4 +45,7 @@ public class MainPage extends PageObject {
     List<WebElementFacade> topics;
 */
 
+    @FindBy(xpath  = "//div[@class='container topic-card']//img[contains(@src,'front_test=1')]")
+    WebElementFacade newTopic;
+
 }

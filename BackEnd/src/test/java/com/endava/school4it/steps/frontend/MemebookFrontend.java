@@ -96,4 +96,8 @@ public class MemebookFrontend {
 */
     }
 
+    @And("^chek if topic is added$")
+    public void chekIfTopicIsAdded() {
+        assertTrue(mainPageUtil.verifyTopicAdded());
+    }
 }
