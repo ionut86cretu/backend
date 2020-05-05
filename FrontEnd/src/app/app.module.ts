@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AddTopicComponent } from './components/add-topic/add-topic.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {AppFooterComponent} from "./components/app-footer/app-footer.component";
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
         AppErrorComponent,
         AddCommentComponent,
         TopicCommentsComponent,
-        AddTopicComponent
+        AddTopicComponent,
+        AppFooterComponent
     ],
     imports: [
         BrowserModule,

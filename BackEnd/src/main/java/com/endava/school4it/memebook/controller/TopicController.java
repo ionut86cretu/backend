@@ -34,7 +34,7 @@ public class TopicController {
     }
 
     @RequestMapping(path = "/add-topic", method = RequestMethod.PUT)
-    public Topic addTopic(
+    public Topic addTopic2(
             @RequestBody PostTopicPayload payload
     ){
         return topicDao.create(payload.getTitle(), payload.getMediaUrl(), payload.getAuthor());

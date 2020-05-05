@@ -1,13 +1,16 @@
 package com.endava.school4it.steps.backend;
 
 import java.io.IOException;
+import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import com.endava.school4it.memebook.api.PostTopicPayload;
 import com.endava.school4it.memebook.entity.Topic;
@@ -84,4 +87,40 @@ public class TopicsSteps {
         return postTopicPayload;
     }
 
+    @When("^get the Topics via Topics API page '(\\d+)' size '(\\d+)'$")
+    public void getTheTopicsViaTopicsAPIPageSize(int page, int size) throws IOException {
+        Response<List<Topic>> response = retrofit.getTopicService().getTopics(page, Integer.toString(size), "id").execute();
+        List<Topic> allTopics = response.body();
+        Assertions.assertNotNull(allTopics, "Lista este nula - "+ response);
+        Serenity.setSessionVariable("allTopicsCount").to(allTopics.size());
+    }
+
+    @And("^the number of topics greater than '(\\d+)'$")
+    public void theNumberOfTopicsUpEqualsWith(int arg0) {
+        Integer topicsCount = Serenity.sessionVariableCalled("allTopicsCount");
+        assertNotEquals(topicsCount, 0, "Number of topics should be greater than 0 !");
+    }
+
+    @When("^I voted down topic via Topic API$")
+    public void iVotedDownTopicViaTopicAPI() throws IOException {
+        Long topicId = Serenity.sessionVariableCalled("topicId");
+        Response<Topic> response = retrofit.getTopicService().downVoteTopic(topicId).execute();
+        Serenity.setSessionVariable(statusCodeVar).to(response.code());
+        Serenity.setSessionVariable("topicResponse").to(response.body());
+    }
+
+    @Then("^the number of votes down equals with '(\\d+)'$")
+    public void theNumberOfVotesDownEqualsWith(int downVotes) {
+        Topic topic = Serenity.sessionVariableCalled("topicResponse");
+        assertEquals(downVotes, topic.getDownVote(), "Number of down votes is not OK !");
+    }
+
+    @And("^the new topic exists$")
+    public void theNewTopicExists() throws IOException {
+        Long topicId = Serenity.sessionVariableCalled("topicId");
+        Response<Topic> response = retrofit.getTopicService().getTopicsById(topicId).execute();
+
+        assertNotNull("Response is null !", response);
+        assertNotNull("Response body is null !", response.body());
+    }
 }

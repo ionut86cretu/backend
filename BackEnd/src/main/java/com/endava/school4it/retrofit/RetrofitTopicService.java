@@ -22,7 +22,7 @@ public interface RetrofitTopicService {
     );
 
     @GET("/topics")
-    Call<List<Topic>> getAllTopics(
+    Call<List<Topic>> getTopics(
             @Query("page") int page,
             @Query("size") String size,
             @Query("sort") String sort);
