@@ -22,6 +22,18 @@ public class MainPage extends PageObject {
     @FindBy(xpath = "//button[@id='add_topic_button']")
     WebElementFacade addTopicButton;
 
+    @FindBy(xpath = "//button[@id='add_comment_button']")
+    WebElementFacade addCommentButton;
+
+    @FindBy(xpath = "//input[@id='add_comment_author']")
+    WebElementFacade commentAuthorInput;
+
+
+    @FindBy(xpath = "//textarea[@id='add_comment_text']")
+    WebElementFacade commentContentInput;
+
+
+
 
 
     @FindBy(xpath = "//input[@id='add_topic_title']")
@@ -40,9 +52,14 @@ public class MainPage extends PageObject {
     @FindBy(xpath  = "//div//img[contains(@alt,'topic image for')]")
     WebElementFacade topicImageField;
 
+    @FindBy(xpath = "//div[@class='container topic-card']//a")
+    WebElementFacade clickOnTopic;
+
 /*
     @FindBy(xpath = "//div/mb-topic-ca  rd")
     List<WebElementFacade> topics;
 */
+//@FindBy(xpath = "//div[@class='container topic-card']//a//div")
+//WebElementFacade topicTitle;
 
 }

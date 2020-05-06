@@ -4,13 +4,11 @@ import java.io.IOException;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import cucumber.api.PendingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.endava.school4it.memebook.entity.Topic;
 import com.endava.school4it.pageObject.MainPageUtil;
@@ -25,12 +23,17 @@ import net.serenitybdd.core.Serenity;
 import retrofit2.Response;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
+import static org.junit.Assert.*;
 
 @Configurable
 @ContextConfiguration(classes = AppConfiguration.class)
 @SuppressWarnings("SpringJavaAutowiredMembersInspection")
 public class MemebookFrontend {
 
+    public String topicTitle1;
+    public String topicMediaUrl;
+    public String topicAuthor;
+    public String commentAuthor;
 
     @Autowired
     public RetrofitService retrofit;
@@ -57,20 +60,10 @@ public class MemebookFrontend {
         mainPageUtil.clickAddTopicButtonHeader();
     }
 
-    @And("^i add Topic Title '(.*)'$")
-    public void iAddTopicTitleAutoTest(String topicTitle) {
-        mainPageUtil.addTopicTitle(topicTitle);
-    }
 
-    @And("^i add Topic URL '(.*)'$")
-    public void iAddTopicURL(String topicUrl) {
-        mainPageUtil.addTopicURL(topicUrl);
-    }
 
-    @And("^i add Topic Author '(.*)'$")
-    public void iAddTopicAuthorAutoTest(String topicAuthor) {
-        mainPageUtil.addTopicAuthor(topicAuthor);
-    }
+
+
 
     @And("^i press Submit Button$")
     public void iPressSubmitButton() throws InterruptedException {
@@ -96,4 +89,64 @@ public class MemebookFrontend {
 */
     }
 
+    @And("^i verify that the created topic matches$")
+    public void iVerifyThatTheCreatedTopicMatches() {
+        System.out.println(topicAuthor);
+        assertFalse(mainPageUtil.verifyMatches(topicAuthor,topicMediaUrl));
+
+        System.out.println(topicMediaUrl);
+
+
+    }
+
+    @And("^i add Topic Title \"([^\"]*)\"$")
+    public void iAddTopicTitle(String topicTitle) throws Throwable {
+        this.topicTitle1 =topicTitle;
+        mainPageUtil.addTopicTitle(topicTitle);
+    }
+
+    @And("^i add Topic URL \"([^\"]*)\"$")
+    public void iAddTopicURL(String topicMediaUrl) throws Throwable {
+        this.topicMediaUrl = topicMediaUrl;
+        mainPageUtil.addTopicURL(topicMediaUrl);
+
+    }
+
+    @And("^i add Topic Author \"([^\"]*)\"$")
+    public void iAddTopicAuthor(String topicAuthor) throws Throwable {
+        this.topicAuthor = topicAuthor;
+        mainPageUtil.addTopicAuthor(topicAuthor);
+
+    }
+
+    @Then("^i open a topic$")
+    public void iOpenATopic() {
+        mainPageUtil.clickOnTitle();
+    }
+
+
+    @And("^i add Topic Title '(.*)'$")
+    public void iAddTopicTitleAutoTest(String topicTitle) {
+        mainPageUtil.addTopicTitle(topicTitle);
+    }
+
+    @And("^i add comment author \"([^\"]*)\"$")
+    public void iAddCommentAuthor(String commentAuthor) throws Throwable {
+        mainPageUtil.addCommentAuthor(commentAuthor);
+    }
+
+    @And("^i add comment content \"([^\"]*)\"$")
+    public void iAddCommentContent(String commentContent) throws Throwable {
+        mainPageUtil.addCommentContent(commentContent);
+    }
+
+    @And("^i press Submit Comment Button$")
+    public void iPressSubmitCommentButton() {
+        mainPageUtil.clickAddComment();
+    }
+
+    //    @And("^i add Topic Author '(.*)'$")
+//    public void iAddTopicAuthorAutoTest(String topicAuthor) {
+//        mainPageUtil.addTopicAuthor(topicAuthor);
+//    }
 }

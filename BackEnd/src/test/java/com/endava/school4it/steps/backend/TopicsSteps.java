@@ -1,7 +1,10 @@
 package com.endava.school4it.steps.backend;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
+import cucumber.api.Transpose;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.test.context.ContextConfiguration;
@@ -54,6 +57,12 @@ public class TopicsSteps {
         Response<Topic> response = retrofit.getTopicService().deleteTopicsById(topicId).execute();
         Serenity.setSessionVariable(statusCodeVar).to(response.code());
     }
+//    @Then("^delete the topics from database$")
+//    public void deleteTheTopicsFromDatabase() throws IOException {
+//        Long topicId = Serenity.sessionVariableCalled("topicId");
+//        Response<Topic> response = retrofit.getTopicService().deleteTopicsById(topicId).execute();
+//        Serenity.setSessionVariable(statusCodeVar).to(response.code());
+//    }
 
     @When("^get the Topic by id via Topics API$")
     public void getTheTopicByIdViaTopicsAPI() throws IOException {
@@ -61,6 +70,8 @@ public class TopicsSteps {
         Response<Topic> response = retrofit.getTopicService().getTopicsById(topicId).execute();
         Serenity.setSessionVariable(statusCodeVar).to(response.code());
     }
+
+
 
     @Then("^I voted up topic via Topic API$")
     public void iVotedUpTopicViaTopicAPI() throws IOException {
@@ -76,6 +87,21 @@ public class TopicsSteps {
         assertEquals(upVotes, topic.getUpVote(), "Number of up votes is not OK !");
     }
 
+    @Then("^I voted down topic via Topic API$")
+    public void iVotedDownTopicViaTopicAPI() throws IOException {
+        Long topicId = Serenity.sessionVariableCalled("topicId");
+        Response<Topic> response = retrofit.getTopicService().downVoteTopic(topicId).execute();
+        Serenity.setSessionVariable(statusCodeVar).to(response.code());
+        Serenity.setSessionVariable("topicResponse").to(response.body());
+    }
+
+    @And("^the number of votes down equals with '(.*)'$")
+    public void theNumberOfVotesDownEqualsWith(int upVotes) {
+        Topic topic = Serenity.sessionVariableCalled("topicResponse");
+        assertEquals(upVotes, topic.getDownVote(), "Number of down votes is not OK !");
+    }
+
+
     private PostTopicPayload createTopic() {
         PostTopicPayload postTopicPayload = new PostTopicPayload();
         postTopicPayload.setTitle("Topic Automated Testing");
@@ -84,4 +110,15 @@ public class TopicsSteps {
         return postTopicPayload;
     }
 
+    @When("^I get the specifics topics with the following data$")
+    public void iGetTheSpecificsTopicsWithTheFollowingData(@Transpose Map<String,String> fields) throws IOException {
+        int page = Integer.valueOf(fields.get("page")) ;
+        String size = fields.get("size");
+        String sort = fields.get("sort");
+
+        Response <List<Topic>> response = retrofit.getTopicService().getAllTopics(page, size,sort).execute();
+        System.out.println(response.body());
+        Serenity.setSessionVariable(statusCodeVar).to(response.code());
+
+    }
 }
