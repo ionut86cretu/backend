@@ -48,4 +48,12 @@ public class MainPage extends PageObject {
     @FindBy(xpath  = "//div[@class='container topic-card']//img[contains(@src,'front_test=1')]")
     WebElementFacade newTopic;
 
+    @FindBy(xpath  = "//input[@id='add_comment_author']")
+    WebElementFacade topicCommentAuthor;
+
+    @FindBy(xpath  = "//textarea[@id='add_comment_text']")
+    WebElementFacade topicCommentComment;
+
+    @FindBy(xpath  = "//button[@id='add_comment_button']")
+    WebElementFacade addCommentButton;
 }

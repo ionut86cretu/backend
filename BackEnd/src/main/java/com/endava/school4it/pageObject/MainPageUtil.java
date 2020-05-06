@@ -41,6 +41,24 @@ public class MainPageUtil extends MainPage{
         return false;
     }
 
+    public void clickTopicImage(){
+        newTopic.waitUntilVisible().click();
+        waitABit(4000);
+    }
+
+    public void addCommentAuthor(String commentAuthor) {
+        topicCommentAuthor.waitUntilVisible().then().sendKeys(commentAuthor);
+    }
+
+    public void addCommentComment(String commentComment) {
+        topicCommentComment.waitUntilVisible().then().sendKeys(commentComment);
+    }
+
+    public void clickAddComment() {
+        addCommentButton.waitUntilVisible().click();
+        waitABit(4000);
+    }
+
 /*    public int numberOfTopic() {
         waitABit(3000);
         return topics.size();

@@ -100,4 +100,24 @@ public class MemebookFrontend {
     public void chekIfTopicIsAdded() {
         assertTrue(mainPageUtil.verifyTopicAdded());
     }
+
+    @And("^i press on topic image$")
+    public void iPressOnTopicImage() {
+        mainPageUtil.clickTopicImage();
+    }
+
+    @And("^i add Comment Author 'Author Front Test'$")
+    public void iAddCommentAuthorAuthorFrontTest(String commentAuthor) {
+        mainPageUtil.addCommentAuthor(commentAuthor);
+    }
+
+    @And("^i add Comment Comment 'Comment Front Test'$")
+    public void iAddCommentCommentCommentFrontTest(String commentComment) {
+        mainPageUtil.addCommentComment(commentComment);
+    }
+
+    @And("^i press Submit Comment$")
+    public void iPressSubmitComment() {
+        mainPageUtil.clickAddComment();
+    }
 }
