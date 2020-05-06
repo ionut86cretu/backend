@@ -1,5 +1,6 @@
 package com.endava.school4it.pageObject;
 
+import net.serenitybdd.core.annotations.findby.By;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -68,6 +69,11 @@ public class MainPageUtil extends MainPage{
 
     public void clickDeleteComment() {
         deleteCommentbutton.waitUntilVisible().click();
+    }
+
+    public boolean verifyCommetDeleted() {
+        waitABit(3000);
+        return getDriver().findElements(By.xpath("//div[contains(@class, 'pt-2') and contains(.//span, 'Comment Front Test')]")).size() > 0;
     }
 
 /*    public int numberOfTopic() {

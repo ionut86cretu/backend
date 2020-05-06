@@ -1,16 +1,15 @@
 package com.endava.school4it.steps.frontend;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.endava.school4it.memebook.entity.Topic;
 import com.endava.school4it.pageObject.MainPageUtil;
@@ -25,6 +24,7 @@ import net.serenitybdd.core.Serenity;
 import retrofit2.Response;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
+import static org.junit.Assert.*;
 
 @Configurable
 @ContextConfiguration(classes = AppConfiguration.class)
@@ -129,5 +129,13 @@ public class MemebookFrontend {
     @And("^delete comment from database$")
     public void deleteCommentFromDatabase() {
         mainPageUtil.clickDeleteComment();
+    }
+
+    @And("^check if comment deleted$")
+    public void checkIfCommentDeleted() {
+        assertFalse(mainPageUtil.verifyCommetDeleted());
+
+        //boolean comment = getDriver().findElements(By.xpath("//div[contains(@class, 'pt-2') and contains(.//span, 'Comment Front Test')]")).size() > 0;
+        //assertFalse(comment);
     }
 }

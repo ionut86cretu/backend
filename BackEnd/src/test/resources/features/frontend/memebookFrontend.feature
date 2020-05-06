@@ -51,5 +51,6 @@ Feature: Automating Testing Memebook Front End
     And refresh page
     And chek if comment is added
     And delete comment from database
+    And check if comment deleted
     And delete all topics from database
     And the response status code should be '200'
