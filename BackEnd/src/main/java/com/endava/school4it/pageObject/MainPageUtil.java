@@ -59,6 +59,17 @@ public class MainPageUtil extends MainPage{
         waitABit(4000);
     }
 
+    public boolean verifyCommetAdded() {
+        waitABit(3000);
+        if (newComment.isDisplayed())
+            return true;
+        return false;
+    }
+
+    public void clickDeleteComment() {
+        deleteCommentbutton.waitUntilVisible().click();
+    }
+
 /*    public int numberOfTopic() {
         waitABit(3000);
         return topics.size();

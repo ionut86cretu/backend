@@ -49,3 +49,7 @@ Feature: Automating Testing Memebook Front End
     And i add Comment Comment 'Comment Front Test'
     And i press Submit Comment
     And refresh page
+    And chek if comment is added
+    And delete comment from database
+    And delete all topics from database
+    And the response status code should be '200'

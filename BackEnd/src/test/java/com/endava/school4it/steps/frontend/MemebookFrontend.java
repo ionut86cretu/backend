@@ -106,12 +106,12 @@ public class MemebookFrontend {
         mainPageUtil.clickTopicImage();
     }
 
-    @And("^i add Comment Author 'Author Front Test'$")
+    @And("^i add Comment Author '(.*)'$")
     public void iAddCommentAuthorAuthorFrontTest(String commentAuthor) {
         mainPageUtil.addCommentAuthor(commentAuthor);
     }
 
-    @And("^i add Comment Comment 'Comment Front Test'$")
+    @And("^i add Comment Comment '(.*)'$")
     public void iAddCommentCommentCommentFrontTest(String commentComment) {
         mainPageUtil.addCommentComment(commentComment);
     }
@@ -119,5 +119,15 @@ public class MemebookFrontend {
     @And("^i press Submit Comment$")
     public void iPressSubmitComment() {
         mainPageUtil.clickAddComment();
+    }
+
+    @And("^chek if comment is added$")
+    public void chekIfCommentIsAdded() {
+        assertTrue(mainPageUtil.verifyCommetAdded());
+    }
+
+    @And("^delete comment from database$")
+    public void deleteCommentFromDatabase() {
+        mainPageUtil.clickDeleteComment();
     }
 }

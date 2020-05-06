@@ -56,4 +56,10 @@ public class MainPage extends PageObject {
 
     @FindBy(xpath  = "//button[@id='add_comment_button']")
     WebElementFacade addCommentButton;
+
+    @FindBy(xpath  = "//div[contains(@class, 'pt-2') and contains(.//span, 'Comment Front Test')]")
+    WebElementFacade newComment;
+
+    @FindBy(xpath  = "//div[position()=1 and contains(@class, 'ng-star-inserted')]//div[contains(@class, 'pt-2')]//span[@class='delete-comment']")
+    WebElementFacade deleteCommentbutton;
 }
